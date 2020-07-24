@@ -1,0 +1,92 @@
+/******************************************************************
+
+Stylesheet: 600px以上のタブレットやモニタで適用
+
+******************************************************************/
+
+.flex {
+  flex-direction: row;
+    //要素を折り返す、flex-basis: 50%;になっているため二列になる
+  flex-wrap: wrap;
+}
+
+.houses {
+
+  //上にflexを作ることでinnerを省略
+  // &__inner {
+  //   flex-direction: row;
+  //   flex-wrap: wrap;
+  // }
+
+  &__item {
+    flex-basis: 50%;
+    margin-bottom: 60px;
+  }
+}
+
+.popular {
+
+  &__container {
+    //中央に隙間が開く
+    justify-content: space-between;
+  }
+
+  &__item {
+    //中央の隙間が6%
+    flex-basis: 47%;
+  }
+
+  &__img {
+    height: 250px;
+  }
+}
+
+.nostalgic {
+
+  &__container {
+    //中央に隙間が開く
+    justify-content: space-between;
+  }
+
+  &__item {
+    //中央の隙間が6%
+    flex-basis: 47%;
+  }
+
+  &__img {
+    height: 250px;
+  }
+}
+
+
+.travel {
+
+  &__inner {
+    padding: 50px;
+  }
+
+  &__texts,
+  &__img {
+    flex-basis: 47%;
+  }
+
+  &__texts {
+    display: flex;
+    //下揃え
+    align-items: flex-end;
+  }
+}
+
+.footer {
+
+  & .logo {
+    //左寄せ
+    justify-content: flex-start;
+  }
+
+  &__li {
+    //logoとlistを揃える
+    margin-left: 0;
+    margin-right: 30px;
+  }
+}

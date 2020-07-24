@@ -1,0 +1,103 @@
+/******************************************************************
+
+Stylesheet: 960px以上のモニタで適用
+
+******************************************************************/
+
+//PCのフォントサイズ
+.font-sm {
+  font-size: 16px;
+}
+.font-md {
+  font-size: 19px;
+}
+.font-lr {
+  font-size: 23px;
+}
+.font-lg {
+  font-size: 36px;
+}
+
+//PCの余白設定
+//mb = margin-bottom 略
+.mb-lg {
+  margin-bottom: 150px !important;
+}
+//pb = padding-bottom 略
+.pb-lg {
+  padding-bottom: 150px !important;
+}
+
+
+.popular {
+
+  &__item {
+    //一行に並ぶ
+    flex-basis: 19%;
+  }
+
+  &__img {
+    height: 230px;
+  }
+}
+
+.nostalgic {
+
+  &__item {
+    //一行に並ぶ
+    flex-basis: 19%;
+  }
+
+  &__img {
+    height: 230px;
+  }
+}
+
+.travel {
+
+  &__img {
+    height: 400px;
+  }
+
+  &__description {
+    margin-bottom: 40px;
+  }
+
+  &__title {
+    //画面960以上で棒表示
+    &::before {
+      display: block;
+    }
+  }
+}
+
+.footer {
+  &__li {
+    justify-content: flex-start;
+  }
+}
+
+.header {
+  //PC画面では表示
+  &__nav {
+    display: block;
+  }
+}
+
+.mobile-menu {
+  &__btn {
+    display: none;
+  }
+}
+
+.swiper-slide {
+  box-shadow: 0 8px 40px -10px rgba(0, 0, 0, 0.8);
+}
+
+.houses {
+
+  &__title {
+    height: 100px;
+    margin-bottom: 0 !important;
+  }
+}

@@ -1,0 +1,533 @@
+/******************************************************************
+
+Stylesheet: ベーススタイル
+
+******************************************************************/
+
+body {
+  //最初にローマ字、次に日本語
+  font-family: 'Cabin', 'Kosugi Maru', sans-serif;
+}
+
+img {
+  // max-height: 100%;
+  max-width: 100%;
+  vertical-align: bottom;
+}
+
+//スマホのフォントサイズ
+.font-sm {
+  font-size: 14px;
+}
+.font-md {
+  font-size: 17px;
+}
+.font-lr {
+  font-size: 17px;
+}
+.font-lg {
+  font-size: 25px;
+}
+
+//スマホの余白設定
+//mb = margin-bottom 略
+.mb-sm {
+  margin-bottom: 16px !important;
+}
+.mb-lg {
+  margin-bottom: 80px !important;
+}
+
+//pb = padding-bottom 略
+.pb-sm {
+  padding-bottom: 16px !important;
+}
+.pb-lg {
+  padding-bottom: 80px !important;
+}
+
+//左右幅の設定
+.content-width {
+  width: 90%;
+  margin: 0 auto;
+  //画面の上限を決める重要な値は変数にする（後が楽）
+  max-width: $contentMaxWidth;
+}
+
+.main-title {
+  @extend .font-lg;
+  font-weight: 600;
+  margin-bottom: 0;
+  display: block;  //２行にする
+}
+
+.sub-title {
+  @extend .font-sm;
+  color: $cSubTitle;
+}
+
+//よく使うので、継承できるようにする
+.flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.purple {
+  color: $cWineRed;
+}
+
+//_hero-sider.scssに記載
+// #content {
+//   //headerと重ならないようする
+//   //headerのheightと同じにしないといけないので値（100px）を変数にする
+//   padding-top: $navHeight;
+// }
+
+#main-content {
+  //サイドバー表示の為
+  position: relative;
+  z-index: 0;
+}
+
+main {
+  //サイドバー表示の為
+  position: relative;
+  z-index: -1;
+}
+
+#container {
+  //mobile-menuのlogoが消える、mobile-menuを押せばlogoが現れる
+  background-color: $cWhite;
+  position: relative;
+  z-index: 10;
+
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.header {
+  position: fixed;  //位置固定
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: $navHeight;
+  background-color: transparent;  //背景色透明
+  display: flex;
+  // justify-content: flex-end;
+  align-items: center;
+  z-index: 100;
+
+  //headerの背景色
+  //main.jsにtriggered記載
+  &.triggered {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 10px, 0, 25px, -10px, rgba(0, 0, 0, 0.5);
+  }
+
+  &__nav {
+    display: none;
+  }
+
+  // footerからコピー（ul li logo）
+  &__ul {
+    display: flex;
+    // @extend .flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    align-items: center;
+  }
+
+  &__li {
+    margin-left: 20px;
+
+    & > a {
+      color: $cBlack;
+      text-decoration: none !important; //hover時アンダーライン削除
+      // text-transform: uppercase;  //大文字にする
+    }
+  }
+
+  //スマホ画面
+  & .logo {
+    font-size: 38px;
+    // @extend .flex;があるため
+    justify-content: center;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @extend .content-width;
+  }
+}
+
+
+.travel {
+  @extend .content-width;
+  //下部分の余白
+  @extend .mb-lg;
+
+  &__inner {
+    @extend .flex;
+    justify-content: space-between;
+    padding: 15px;
+    background-color: $cBgGray;
+    //画像にbox-shadowをつける
+    position: relative;
+    z-index: 0;
+  }
+
+  &__title {
+    position: relative;
+
+    //mixinの中にp-baseが記載されている
+    //$display: none,はスマホ画面のみ表示しない
+    @include p-base($display: none, $width: 100px, $height: 1px, $top: 50%, $left: -120px) {
+      background-color: $cBlack;
+      transform: translateY(-50%) scaleX(0);
+      transition: transform 0.3s ease 1.6s;
+      //右端を起点に動く
+      transform-origin: right;
+    }
+
+    //&__texts(226行目)に移動
+    // &.inview {
+    //   &::before {
+    //     transform: translateY(-50%);
+    //   }
+    // }
+  }
+  
+
+  &__sub {
+    @extend .mb-sm;
+  }
+
+  &__img {
+    height: 300px;
+    @extend .mb-sm;
+    transition: box-shadow 1ms linear 0.8s;
+    
+    & > img {
+      //object-fitが無いと余白ができてしまう
+      object-fit: cover;
+      max-width: 100%;
+      max-height: 100%;
+      //画像の背面にあるためz-index: -1;
+      position: relative;
+      z-index: -1;
+    }
+
+    &.inview {
+      box-shadow: inset 0 0 30px $cWhite;
+      
+    }
+  }
+
+  &__texts {
+    @extend .pb-sm;
+
+    //黒い横線が動く
+    //後から .travel__titleを追加
+    &.inview {
+      & .travel__title::before {
+        transform: translateY(-50%);
+      }
+    }
+  }
+}
+
+
+//@exted（継承） housesクラスにcontent-widthの値を継承
+//index.htmlにクラスを追加する必要が無い（どちらでも良い）
+.houses {
+  position: relative;
+
+  @extend .content-width;
+  //下部分の余白
+  @extend .mb-lg;
+
+  &__inner {
+    @extend .flex;
+  }
+
+  &__title {
+    @extend .font-lr;
+    @extend .mb-sm;
+  }
+
+  &__btn {
+    text-align: center;
+    //画像が奇数の場合でもボタンのみ折り返ししない
+    flex-basis: 100%;
+  }
+
+  .bg-img-zoom  {
+    background-position: center;
+    background-size: cover;
+    height: 200px;
+    @extend .img-zoom;
+
+  }
+
+}
+
+
+.popular {
+  margin-bottom: 80px !important;
+
+  .main-title {
+    .char:nth-child(1) { color: aqua; }
+    .char:nth-child(2) { color: aqua; }
+    .char:nth-child(3) { color: aqua; }
+    .char:nth-child(4) { color: aqua; }
+  }
+
+
+  &__inner {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 90%;  //下から90%
+      background-color: $cBgGray;
+    }
+  }
+
+  &__header {
+    @extend .content-width;
+  }
+  
+  &__container {
+    position: relative; //これが無いと背景色が前にきてしまう
+    z-index: 2;
+    @extend .flex;
+    //背景まで中央によってしまうためcontainerに中央揃えを設定
+    @extend .content-width;
+    @extend .pb-sm;
+    margin: 0 auto;
+  }
+
+  &__title {
+    @extend .font-md;
+    @extend .mb-sm;
+  }
+
+  &__btn {
+    text-align: center;
+    flex-basis: 100%;
+    //ボタンから下に余白
+    @extend .mb-lg;
+  }
+
+  &__img {
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 5px;
+
+    & > img {
+      object-fit: cover;
+      //画像の表示位置を設定
+      // object-position: center;
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+}
+
+.nostalgic {
+
+  .main-title {
+    .char:nth-child(1) { color: greenyellow; }
+    .char:nth-child(2) { color: greenyellow; }
+    .char:nth-child(3) { color: greenyellow; }
+    .char:nth-child(4) { color: greenyellow; }
+  }
+
+  &__inner {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 95%;  //下から95%
+      background-color: $cBgGray;
+    }
+  }
+
+  &__header {
+    @extend .content-width;
+  }
+  
+  &__container {
+    position: relative; //これが無いと背景色が前にきてしまう
+    z-index: 2;
+    @extend .flex;
+    //背景まで中央によってしまうためcontainerに中央揃えを設定
+    @extend .content-width;
+    @extend .pb-sm;
+  }
+
+  &__title {
+    @extend .font-md;
+    @extend .mb-sm;
+  }
+
+  // &__btn {
+  //   text-align: center;
+  //   flex-basis: 100%;
+  //   //ボタンから下に余白
+  //   @extend .mb-lg;
+  // }
+
+  &__img {
+    height: 150px;
+    overflow: hidden;
+    margin-bottom: 5px;
+
+    & > img {
+      object-fit: cover;
+      //画像の表示位置を設定
+      // object-position: center;
+      max-height: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .btn-cubic {
+    text-align: center;
+    // flex-basis: 100%;
+    //ボタンから下に余白
+    @extend .mb-lg;
+  }
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 42px;
+  display: flex;
+
+  &__img {
+    width: 57px;
+    height: 57px;
+  }
+
+  &__word {
+    color: $cRed;
+  }
+}
+
+
+.footer {
+  padding: 60px 0;
+  @extend .content-width;
+
+  &__nav {
+    @extend .flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+  }
+
+  &__ul {
+    @extend .flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__li {
+    padding: 0;
+    margin: 10px;
+
+    & > a {
+      color: $cSubTitle;
+    }
+  }
+
+  //スマホ画面
+  & .logo {
+    font-family: 'Rowdies', cursive;
+    font-size: 38px;
+    // @extend .flex;があるため
+    justify-content: center;
+  }
+}
+
+.side {
+  display: none;
+  position: fixed;
+  top: 70%;
+  transform: translateY(-50%);
+  //画面表示時のアニメーション
+  transition: all 0.3s ease-in;
+
+  //.tween-animate-titleにしないとアニメーションを付与したときに文字が崩れる
+  // & a,
+  // & span
+  & .tween-animate-title {
+    color: $cBlack;
+    text-decoration: none !important;
+    margin: 0 40px;  //アイコンがかさならないようにする
+    vertical-align: middle;   //アイコンと文字列が中央揃え
+    letter-spacing: 2px;      //文字間隔をあける
+  }
+
+  &.left {
+    left: -50px;
+
+    //inviewが発火したタイミングで表示
+    &.inview {
+      left: 50px;
+    }
+
+    & .side__inner {
+      transform-origin: top left;
+      transform: rotate(-90deg);
+    }
+  }
+
+  &.right {
+    right: -50px;
+
+    &.inview {
+      right: 50px;
+    }
+
+    & .side__inner {
+      transform-origin: top right;
+      transform: rotate(90deg);
+    }
+  }
+  
+}
+
+.icon {
+  position: relative;
+
+  @include p-base($left: -20px, $top: 50%, $width: 1em, $height: 1em) {  //1em 1文字分の縦横
+    transform: translateY(-50%);
+    background-position: center;     //左右上下中央
+    background-repeat: no-repeat;    //背景画像を一回だけ表示して繰り返さない
+    background-size: contain;        //横幅比確保して最大
+  }
+
+  &.twitter {
+    &::before {
+      background-image: url(../images/twitter.svg);
+    }
+  }
+  &.fb {
+    &::before {
+      background-image: url(../images/facebook.svg);
+    }
+  }
+}

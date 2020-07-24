@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>週刊少年ジャンプ</title>
+
+    <!-- styles/style.cssより上に記述（最初に読み込む為） -->
+    <link rel="stylesheet" href="styles/loader.css" />
+    <script src="scripts/vendors/pace.js"></script>
+
+    <!-- 横幅６００px以下で読み込む -->
+    <!-- <link rel="stylesheet" href="mobile.css" media="screen and (max-width: 600px)"> -->
+    <!-- 横幅６０１px以上で読み込む（(min-width: 601pxなくても良い） -->
+    <!-- <link rel="stylesheet" href="desktop.css" media="screen and (min-width: 601px)"> -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Kosugi+Maru&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- bootstrap-reboot.cssは一番最初に読み込む（必ず最初にリセットCSSは設定しないとあとで大変） -->
+    <!-- reset.css、normalize.css、bootstrap-reboot.cssのどれか使用する -->
+    <link rel="stylesheet" href="styles/vendors/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="styles/vendors/swiper.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
+
+    <!-- 拡大画像表示準備 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/css/lightbox.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.7.1/js/lightbox.min.js" type="text/javascript"></script>
+
+  </head>
+  <body>
+    <div id="global-container">
+      <div id="container">
+        <!-- モバイルメニュー -->
+        <div class="mobile-menu__cover"></div>
+        <div class="nav-trigger"></div>
+        <header class="header">
+          <div class="header__inner appear up">
+            <div class="logo item">
+              <img
+                src="https://i0.wp.com/xn--o9j0bk5542aytpfi5dlij.biz/wp-content/uploads/2014/11/e416b734dfa83bccdd4f39d9912e1fb4.jpg"
+                alt=""
+                class="logo__img"
+              />
+              <span class="logo__stay">週刊少年</span>
+              <span class="logo__word">ジャンプ</span>
+            </div>
+            <!-- デスクトップ表示 -->
+            <nav class="header__nav">
+              <ul class="header__ul">
+                <li class="header__li item"><a href="https://qiita.com/Jump" target="_blank" rel="noopener noreferrer">Qiita</a></li>
+                <li class="header__li item"><a href="https://www.facebook.com/home.php?ref=wizard" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+                <li class="header__li item">
+                  <a class="btn filled" href="https://github.com/tsuboyama09" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </li>
+              </ul>
+            </nav>
+            <!-- スマホ画面表示 -->
+            <button class="mobile-menu__btn">
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+        </header>
+
+        <div id="content">
+          <div class="hero">
+            <!-- Slider main container -->
+            <div class="swiper-container">
+              <!-- Additional required wrapper -->
+              <div class="swiper-wrapper">
+                <!-- Slides -->
+                <div class="swiper-slide">
+                  <div class="hero__title">創刊〜1980年代、伝説の始まり</div>
+                  <img
+                    src="https://spice.eplus.jp/images/GChkckVEDPV3YBeMA9qMEcZgwdju9CWBMZ102XMAb2Crd19exOMdujkkpshy3OHl"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <div class="hero__title">
+                    1990年代〜、発行部数653万部の衝撃
+                  </div>
+                  <img
+                    src="https://collabo-cafe.com/wp-content/uploads/e0507047d8b1a3844277400de333c93f.jpg"
+                    alt=""
+                  />
+                </div>
+                <div class="swiper-slide">
+                  <div class="hero__title">
+                    2000年代〜、進化する最強雑誌の現在
+                  </div>
+                  <img
+                    src="https://collabo-cafe.com/wp-content/uploads/86c8a2521869fa2e835198594fbc638a.jpg"
+                    alt=""
+                  />
+                </div>
+              </div>
+              <div class="hero__footer">
+                <img class="hero__downarrow" src="images/arrow.svg" />
+                <span class="hero__scrolltext">scroll</span>
+              </div>
+              <!-- If we need pagination -->
+              <!-- <div class="swiper-pagination"></div> -->
+
+              <!-- If we need navigation buttons -->
+              <!-- <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+         -->
+              <!-- If we need scrollbar -->
+              <!-- <div class="swiper-scrollbar"></div> -->
+            </div>
+          </div>
+          <div id="main-content">
+            <!-- 左サイドバー -->
+            <aside class="side left">
+              <div class="side__inner">
+                <a href="https://twitter.com/home" target="_blank" rel="noopener noreferrer" class="twitter icon tween-animate-title">Twitter</a>
+                <a href="https://www.facebook.com/home.php?ref=wizard" target="_blank" rel="noopener noreferrer" class="fb icon tween-animate-title">Facebook</a>
+              </div>
+            </aside>
+
+            <!-- https://farm5.staticflickr.com/4121/4938749179_0a334b1d3d_z.jpg -->
+            <main>
+              <section class="travel">
+                <div class="travel__inner">
+                  <div class="travel__img cover-slide">
+                    <img
+                      class="img-zoom"
+                      src="https://www.shonenjump.com/j/weeklyshonenjump/img/20200720/_mainImg_hyoushi_2020_no33_34.jpg?version=20200717175517"
+                      alt=""
+                    />
+                  </div>
+                  <div class="travel__texts appear left">
+                    <div class="travel__texts-inner">
+                      <div class="travel__title main-title item">
+                        <span class="purple">最新号</span>
+                        <span>をチェック</span>
+                      </div>
+                      <div class="travel__sub sub-title item">
+                        おもしろいよ
+                      </div>
+                      <div class="travel__description item">
+                        <!-- brは折り返し -->
+                        <p>
+                          アプリで購読<br />おすすめです
+                        </p>
+                        <p>あなたの好きなものがきっと見つかります。</p>
+                      </div>
+                      <div class="travel__btn item">
+                        <button class="btn slide-bg item" onclick="window.open('https://www.shonenjump.com/j/index.html')">公式サイト</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="houses">
+                <div>
+                  <h2 class="main-title tween-animate-title">ジャンプの歴史</h2>
+                  <p class="sub-title tween-animate-title">
+                    年代別にピックアップ
+                  </p>
+                </div>
+                <div class="houses__inner">
+                  <div class="houses__item">
+                    <div class="cover-slide hover-darken inview">
+                      <div class="bg-img-zoom img-bg50">
+                        <a  href="https://farm5.staticflickr.com/4121/4938749179_0a334b1d3d_z.jpg" data-lightbox="abc" data-title="1970年">
+                          <img  src="https://farm5.staticflickr.com/4121/4938749179_0a334b1d3d_z.jpg" alt="">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="houses__title">1970年代〜</div>
+                  </div>
+
+                  <div class="houses__item">
+                    <div class="cover-slide hover-darken inview">
+                      <div class="bg-img-zoom img-bg50">
+                        <a  href="https://i.pinimg.com/originals/df/d6/04/dfd6049528ff017e7bd6084bfd091c5b.jpg" data-lightbox="abc" data-title="1980年">
+                          <img  src="https://i.pinimg.com/originals/df/d6/04/dfd6049528ff017e7bd6084bfd091c5b.jpg" alt="">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="houses__title">1980年代〜</div>
+                  </div>
+                  <div class="houses__item">
+                    <div class="cover-slide hover-darken inview">
+                      <div class="bg-img-zoom img-bg50">
+                        <a  href="https://omochalaheadchala.com/wp-content/uploads/2018/04/jumpten_dbday_7.jpg" data-lightbox="abc" data-title="1990年">
+                          <img  src="https://omochalaheadchala.com/wp-content/uploads/2018/04/jumpten_dbday_7.jpg" alt="">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="houses__title">1990年代〜</div>
+                  </div>
+                  <div class="houses__item">
+                    <div class="cover-slide hover-darken inview">
+                      <div class="bg-img-zoom img-bg50">
+                        <a  href="https://img.animanch.com/2020/01/1578914694493.jpg" data-lightbox="abc" data-title="2000年">
+                          <img  src="https://img.animanch.com/2020/01/1578914694493.jpg" alt="">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="houses__title">2000年代〜</div>
+                  </div>
+                  <div class="houses__item">
+                    <div class="cover-slide hover-darken inview">
+                      <div class="bg-img-zoom img-bg50">
+                        <a  href="https://blog-imgs-57.fc2.com/d/o/k/dokujan/201308120220249ab.jpg" data-lightbox="abc" data-title="2010年">
+                          <img  src="https://blog-imgs-57.fc2.com/d/o/k/dokujan/201308120220249ab.jpg" alt="">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="houses__title">2010年代〜</div>
+                  </div>
+                  <div class="houses__item">
+                    <div class="cover-slide hover-darken inview">
+                      <div class="bg-img-zoom img-bg50">
+                        <a  href="https://cdn-ak.f.st-hatena.com/images/fotolife/j/jcomment_lib/20200511/20200511103309.jpg" data-lightbox="abc" data-title="2020年">
+                          <img  src="https://cdn-ak.f.st-hatena.com/images/fotolife/j/jcomment_lib/20200511/20200511103309.jpg" alt="">
+                        </a>
+                      </div>
+                    </div>
+                    <div class="houses__title">2020年代〜</div>
+                  </div>
+                  <div class="houses__btn appear up">
+                    <button class="btn letter-spacing item" onclick="window.open('https://ja.wikipedia.org/wiki/%E9%80%B1%E5%88%8A%E5%B0%91%E5%B9%B4%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%97%E9%80%A3%E8%BC%89%E4%BD%9C%E5%93%81%E3%81%AE%E4%B8%80%E8%A6%A7')">もっと詳しく</button>
+                  </div>
+                </div>
+              </section>
+              <section class="popular">
+                <div class="popular__header">
+                  <h2 class="main-title tween-animate-title">
+                    おすすめ作品
+                  </h2>
+                  <p class="sub-title tween-animate-title">
+                    愛読歴20年の独断と偏見（TOP5）
+                  </p>
+                </div>
+                <div class="popular__inner appear up">
+                  <div class="popular__container">
+                    <div class="popular__item item">
+                      <div class="popular__img">
+                        <img
+                          src="https://rr.img.naver.jp/mig?src=http%3A%2F%2Fimgcc.naver.jp%2Fkaze%2Fmission%2FUSER%2F20170324%2F74%2F7637204%2F8%2F299x475x821ea9ff3da1b5a73540ff56.jpg%2F300%2F600&twidth=300&theight=600&qlt=80&res_format=jpg&op=r"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">ワンピース</div>
+                      <p>連載期間：1997年 34号 ～ </p>
+                    </div>
+                    <div class="popular__item item">
+                      <div class="popular__img">
+                        <img
+                          src="https://rr.img.naver.jp/mig?src=http%3A%2F%2Fimgcc.naver.jp%2Fkaze%2Fmission%2FUSER%2F20130927%2F27%2F2834307%2F73%2F317x500x4efdd2f969559e8b1c92e99f.jpg%2F300%2F600&twidth=300&theight=600&qlt=80&res_format=jpg&op=r"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">HUNTER×HUNTER</div>
+                      <p>連載期間：1998年 14号 ～ </p>
+                    </div>
+                    <div class="popular__item item">
+                      <div class="popular__img">
+                        <img
+                          src="https://m.media-amazon.com/images/I/61RhvDwqYFL.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">アイシールド21</div>
+                      <p>連載期間：2002年 34号 ～ 2009年 29号</p>
+                    </div>
+                    <div class="popular__item item">
+                      <div class="popular__img">
+                        <img
+                          src="https://rr.img.naver.jp/mig?src=http%3A%2F%2Fimgcc.naver.jp%2Fkaze%2Fmission%2FUSER%2F20150217%2F28%2F2642628%2F49%2F314x500x48ae3157789bac286a60b23b.jpg%2F300%2F600&twidth=300&theight=600&qlt=80&res_format=jpg&op=r"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">スラムダンク</div>
+                      <p>連載期間：1990年 42号 ～ 1996年 27号</p>
+                    </div>
+                    <div class="popular__item item">
+                      <div class="popular__img">
+                        <img
+                          src="https://www.shonenjump.com/j/comics/_comicimage/myhero001.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">僕のヒーローアカデミア</div>
+                      <p>連載期間：2014年 32号 ～ </p>
+                    </div>
+                    <div class="popular__btn appear up">
+                      <button class="btn cover-3d item" onclick="window.open('https://ja.wikipedia.org/wiki/%E9%80%B1%E5%88%8A%E5%B0%91%E5%B9%B4%E3%82%B8%E3%83%A3%E3%83%B3%E3%83%97%E9%80%A3%E8%BC%89%E4%BD%9C%E5%93%81%E3%81%AE%E4%B8%80%E8%A6%A7')">一覧から探す</button>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="nostalgic">
+                <div class="nostalgic__header">
+                  <h2 class="main-title tween-animate-title">
+                    懐かしい作品
+                  </h2>
+                  <p class="sub-title tween-animate-title">
+                    読み始めた頃からの作品をピックアップ
+                  </p>
+                </div>
+                <div class="nostalgic__inner appear up">
+                  <div class="nostalgic__container">
+                    <div class="nostalgic__item item">
+                      <div class="nostalgic__img">
+                        <img
+                          src="https://pbs.twimg.com/media/EQK4B2-UEAIuJZN.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">BLACK CAT</div>
+                      <p>連載期間：2000年 32号 ～ 2004年 29号</p>
+                    </div>
+                    <div class="nostalgic__item item">
+                      <div class="nostalgic__img">
+                        <img
+                          src="https://m.media-amazon.com/images/I/61M9MHPcRmL.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">ボボボーボ・ボーボボ</div>
+                      <p>連載期間：2001年 12号 ～ 2005年 50号</p>
+                    </div>
+                    <div class="nostalgic__item item">
+                      <div class="nostalgic__img">
+                        <img
+                          src="https://dip6t338iqjb9.cloudfront.net/upload/save_image/027/MI-05.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">Mr.FULLSWING</div>
+                      <p>連載期間：2001年 23号 ～ 2006年 23号</p>
+                    </div>
+                    <div class="nostalgic__item item">
+                      <div class="nostalgic__img">
+                        <img
+                          src="https://images-fe.ssl-images-amazon.com/images/I/61vtMME2s4L._SY300_.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">SWORD BREAKER</div>
+                      <p>連載期間：2002年 35号 ～ 2002年 51号</p>
+                    </div>
+                    <div class="nostalgic__item item">
+                      <div class="nostalgic__img">
+                        <img
+                          src="https://images-fe.ssl-images-amazon.com/images/I/51CIlaGMiiL._SY300_.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">Ultra Red</div>
+                      <p>連載期間：2002年 45号 ～ 2003年 29号</p>
+                    </div>
+                    <div class="nostalgic__item item">
+                      <div class="nostalgic__img">
+                        <img
+                          src="https://images-fe.ssl-images-amazon.com/images/I/51O-lnrrC2L._SY300_.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">武装錬金</div>
+                      <p>連載期間：2003年 30号 ～ 2005年 21/22号</p>
+                    </div>
+                    <div class="nostalgic__item item">
+                      <div class="nostalgic__img">
+                        <img
+                          src="https://images-fe.ssl-images-amazon.com/images/I/61HaByvL7BL._SY300_.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">OVER TIME</div>
+                      <p>連載期間：2006年 33号 ～ 2006年 52号</p>
+                    </div>
+                    <div class="nostalgic__item item">
+                      <div class="nostalgic__img">
+                        <img
+                          src="https://images-na.ssl-images-amazon.com/images/I/51WIYGW-8rL._SX322_BO1,204,203,200_.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">重機人間ユンボル</div>
+                      <p>連載期間：2007年 03号 ～ 2007年 14号</p>
+                    </div>
+                    <div class="nostalgic__item item">
+                      <div class="nostalgic__img">
+                        <img
+                          src="https://images-fe.ssl-images-amazon.com/images/I/51qyTafEYrL._SY300_.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">PSYREN -サイレン-</div>
+                      <p>連載期間：2008年 01号 ～ 2010年 52号</p>
+                    </div>
+                    <div class="nostalgic__item item">
+                      <div class="nostalgic__img">
+                        <img
+                          src="https://images-na.ssl-images-amazon.com/images/I/6133zY%2BAC%2BL._AC_SY400_.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div class="houses__title">ǝnígmǝ【エニグマ】</div>
+                      <p>連載期間：2010年 41号 ～ 2011年 47号</p>
+                    </div>
+                    <a class="btn-cubic" onclick="window.open('https://matome.naver.jp/odai/2142562741919327601?&page=1')"><span class="hovering">参考サイト</span><span class="default">参考サイト</span></a>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </main>
+
+            <!-- 右サイドバー -->
+            <aside class="side right">
+              <div class="side__inner">
+                <span class="tween-animate-title">&copy; Code Mafia</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+        
+        <footer class="footer appear up">
+          <div class="logo item">
+            <img src="https://i0.wp.com/xn--o9j0bk5542aytpfi5dlij.biz/wp-content/uploads/2014/11/e416b734dfa83bccdd4f39d9912e1fb4.jpg" alt="" class="logo__img" />
+            <span class="logo__stay">週刊少年</span>
+            <span class="logo__word">ジャンプ</span>
+          </div>
+          <nav class="footer__nav">
+            <ul class="footer__ul">
+              <li class="footer__li item"><a href="#">Service</a></li>
+              <li class="footer__li item"><a href="#">Contact</a></li>
+              <li class="footer__li item"><a href="#">Company</a></li>
+              <li class="footer__li item"><a href="#">Sitemap</a></li>
+            </ul>
+            <div class="footer__copyright item">&copy; Code Mafia</div>
+          </nav>
+        </footer>
+      </div>
+
+      <!-- モバイルメニュー -->
+      <nav class="mobile-menu">
+        <div class="logo">
+          <img src="https://i0.wp.com/xn--o9j0bk5542aytpfi5dlij.biz/wp-content/uploads/2014/11/e416b734dfa83bccdd4f39d9912e1fb4.jpg" alt="" class="logo__img" />
+          <span class="logo__stay">作者</span>
+          <span class="logo__word">情報</span>
+        </div>
+        <ul class="mobile-menu__main">
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="https://qiita.com/Jump" target="_blank" rel="noopener noreferrer">
+              <span class="main-title">Qiita</span>
+              <span class="sub-title">勉強のアウトプット用</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="https://www.facebook.com/home.php?ref=wizard" target="_blank" rel="noopener noreferrer">
+              <span class="main-title">Facebook</span>
+              <span class="sub-title">オンラインサロン用</span>
+            </a>
+          </li>
+          <li class="mobile-menu__item">
+            <a class="mobile-menu__link" href="https://github.com/tsuboyama09" target="_blank" rel="noopener noreferrer">
+              <span class="main-title">GitHub</span>
+              <span class="sub-title">今年からプログラミングを初めました</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <!-- <div class="tween-animate-title">Animation Title</div> -->
+
+    <!-- <div class="cover-slide hover-darken">
+      <div class="bg-img-zoom img-bg50"></div>
+    </div> -->
+    <!-- <div class="cover-slide hover-darken">
+      <img class="img-zoom" src="images/image-1.jpg" alt="" />
+    </div> -->
+
+    <!-- <button class="btn float">Button</button>
+    <button class="btn filled">Button</button>
+    <button class="btn letter-spacing">Button</button>
+    <button class="btn shadow">Button</button>
+    <button class="btn solid">Button</button>
+    <button class="btn slide-bg">Button</button>
+    <button class="btn cover-3d"><span>Button</span></button>
+    <a class="btn-cubic"><span class="hovering">Now, Hovering</span><span class="default">Button</span></a> -->
+
+    <!-- min.jsのminは余分な余白がないファイル -->
+    <script src="scripts/vendors/swiper.min.js"></script>
+    <script src="scripts/vendors/TweenMax.min.js"></script>
+    <script src="scripts/vendors/scroll-polyfill.js"></script>
+
+    <script src="scripts/libs/scroll.js"></script>
+    <script src="scripts/libs/text-animation.js"></script>
+    <script src="scripts/libs/hero-slider.js"></script>
+    <script src="scripts/libs/mobaile-manu.js"></script>
+
+    <!-- main.jsは必ず一番下 -->
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

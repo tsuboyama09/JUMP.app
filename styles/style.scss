@@ -1,0 +1,61 @@
+//scssの読み込み
+// @import 'mobile.scss';
+
+// //cssの読み込み
+// @import url('mobile.css') screen and (max-width: 600px);
+// @import url('desktop.css') screen and (min-width: 601px);
+
+//一番使われるやり方
+// @media screen and (max-width: 600px) {
+//   @import 'mobile.scss';
+// }
+// @media screen and (min-width: 601px) {
+//   @import 'desktop.scss';
+// }
+
+
+//より実践的なやり方
+//desttop.scssの方が複雑なため
+// @import 'mobile.scss';
+
+// @media screen and (min-width: 601px) {
+//   @import 'desktop.scss';
+// }
+
+@import 'modules/variables';
+@import 'modules/mixin';
+@import 'modules/appear';
+@import 'modules/hero-slider';
+@import 'modules/text.animation';
+@import 'modules/image-slide';
+@import 'modules/button';
+@import 'modules/mobaile-menu';
+
+@import 'breakpoints/base';
+
+//スマホ
+@media (min-width: 480px) {
+  @import 'breakpoints/480up';
+}
+//タブレット
+@media (min-width: 600px) {
+  @import 'breakpoints/600up';
+}
+@media (min-width: 960px) {
+  @import 'breakpoints/960up';
+}
+//PC
+@media (min-width: 1280px) {
+  @import 'breakpoints/1280up';
+}
+
+//Retina ディスプレイ
+@media (min-resolution: 192dpi),
+      (-webkit-min-device-pixel-retio: 2) {
+        @import 'breakpoints/2x';
+}
+
+//プリント
+@media print {
+  @import 'breakpoints/print';
+}

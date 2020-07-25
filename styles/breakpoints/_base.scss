@@ -381,12 +381,12 @@ main {
     @extend .mb-sm;
   }
 
-  // &__btn {
-  //   text-align: center;
-  //   flex-basis: 100%;
-  //   //ボタンから下に余白
-  //   @extend .mb-lg;
-  // }
+  &__btn {
+    text-align: center;
+    flex-basis: 100%;
+    //ボタンから下に余白
+    @extend .mb-lg;
+  }
 
   &__img {
     height: 150px;
@@ -402,12 +402,6 @@ main {
     }
   }
 
-  .btn-cubic {
-    text-align: center;
-    // flex-basis: 100%;
-    //ボタンから下に余白
-    @extend .mb-lg;
-  }
 }
 
 .logo {

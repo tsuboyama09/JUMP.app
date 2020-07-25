@@ -990,7 +990,7 @@ img {
   margin-bottom: 16px !important;
 }
 
-.mb-lg, .travel, .houses, .popular__btn, .nostalgic .btn-cubic {
+.mb-lg, .travel, .houses, .popular__btn, .nostalgic__btn {
   margin-bottom: 80px !important;
 }
 
@@ -1288,6 +1288,12 @@ main {
   z-index: 2;
 }
 
+.nostalgic__btn {
+  text-align: center;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
 .nostalgic__img {
   height: 150px;
   overflow: hidden;
@@ -1299,10 +1305,6 @@ main {
      object-fit: cover;
   max-height: 100%;
   max-width: 100%;
-}
-
-.nostalgic .btn-cubic {
-  text-align: center;
 }
 
 .logo {
@@ -1529,7 +1531,7 @@ Stylesheet: 960px以上のモニタで適用
   .font-lg, .main-title {
     font-size: 36px;
   }
-  .mb-lg, .travel, .houses, .popular__btn, .nostalgic .btn-cubic {
+  .mb-lg, .travel, .houses, .popular__btn, .nostalgic__btn {
     margin-bottom: 150px !important;
   }
   .pb-lg, .hero {

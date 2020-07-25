@@ -63,9 +63,9 @@ $cMenuOpen: $cBlack;
     }
     &__btn {
         background-color: unset;
-    border: none;
-    outline: none !important;
-    cursor: pointer;
+        border: none;
+        outline: none !important;
+        cursor: pointer;
 
     & > span {
         background-color: $cMenuClose;

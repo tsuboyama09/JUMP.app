@@ -1322,6 +1322,10 @@ main {
   height: 57px;
 }
 
+.logo__book {
+  color: blue;
+}
+
 .logo__word {
   color: red;
 }

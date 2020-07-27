@@ -73,7 +73,7 @@ img {
 }
 
 .purple {
-  color: $cWineRed;
+  color: rgb(245, 46, 46);
 }
 
 //_hero-sider.scssに記載
@@ -243,6 +243,11 @@ main {
 //index.htmlにクラスを追加する必要が無い（どちらでも良い）
 .houses {
   position: relative;
+
+  .main-title {
+    .char:nth-child(6) { color: $cWineRed; }
+    .char:nth-child(7) { color: $cWineRed; }
+  }
 
   @extend .content-width;
   //下部分の余白

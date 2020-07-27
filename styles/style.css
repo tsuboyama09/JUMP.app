@@ -1029,7 +1029,7 @@ img {
 }
 
 .purple {
-  color: purple;
+  color: #f52e2e;
 }
 
 #main-content {
@@ -1178,6 +1178,14 @@ main {
 
 .houses {
   position: relative;
+}
+
+.houses .main-title .char:nth-child(6) {
+  color: purple;
+}
+
+.houses .main-title .char:nth-child(7) {
+  color: purple;
 }
 
 .houses__btn {
